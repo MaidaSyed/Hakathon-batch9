@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .class-details {
+      font-size: 16px;
+      font-weight: bold;
+      border: 4px solid #ccc;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #f5f5f5;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .class-details .teacher {
+      color: #007bff;
+      /* Blue color for teacher name */
+    }
+
+    .add-stu {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      position: absolute;
+      top: 35%;
+      left: 35%;
+      display: none;
+    }
+
+  /* Style for the parent container */
+#class {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+/* Style for individual class-details divs (cards) */
+.class-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    width: 90%; /* 3 columns with margins */
+    text-align: left;
+    color: #333;
+}
+
+/* Style for the teacher's name */
+.teacher {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Add spacing for class-details on smaller screens */
+@media (max-width: 768px) {
+    .class-details {
+        max-width: calc(50% - 20px); /* 2 columns with margins on smaller screens */
+    }
+}
+
+.students {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Style for individual student sections */
+.students > div {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    max-width: calc(33.33% - 20px); /* 3 columns with margins */
+}
+
+/* Style for student section headings */
+.students h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* Style for student names and roll numbers */
+.students .student-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Add spacing for student sections on smaller screens */
+@media (max-width: 768px) {
+    .students > div {
+        max-width: calc(50% - 20px); /* 2 columns with margins on smaller screens */
+    }
+}
+
+    .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0; /* Background color (adjust as needed) */
+    padding: 10px; /* Add padding for spacing */
+    z-index: 999; /* Ensure the button is above other content */
+}
+/* Style for the container */
+.add-stu {
+    background-color: #f0f0f0; /* Background color (adjust as needed) */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Style for inputs and selects */
+.add-stu input[type="text"],
+.add-stu select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+.add-stu input[type="text"] {
+  width: 90%;
+}
+/* Style for buttons */
+.add-stu button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-stu button#addBtn {
+    background-color: #007bff;
+}
+
+.add-stu button#addBtn:hover {
+    background-color: #0056b3;
+}
+
+.add-stu button#cancel {
+    background-color: #ccc;
+    color: #333;
+}
+
+.add-stu button#cancel:hover {
+    background-color: #999;
+    color: #fff;
+}
+#add {
+  padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="class"></div>
+
+  <div class="students">
+    <div class="bussStu">
+      <h1>Business Administration Students</h1>
+    </div>
+    <div class="comStu">
+      <h1>Computer Science Students</h1>
+    </div>
+    <div class="engStu">
+      <h1>Electrical Engineering Students</h1>
+    </div>
+  </div>
+
+  <div class="add-stu">
+    <input id="name" type="text" placeholder="Student Name"><br>
+    <input id="rollNo" type="text" placeholder="Roll Number"><br>
+    <select id="course-name" name="course-name">
+      <option value="">Select Course</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Business Administration">Business Administration</option>
+      <option value="Electrical Engineering">Electrical Engineering</option>
+    </select><br>
+    <select id="batch-num" name="batch-num">
+      <option value="">Select Batch</option>
+      <option value="Batch 7">Batch 7</option>
+      <option value="Batch 8">Batch 8</option>
+      <option value="Batch 9">Batch 9</option>
+    </select><br>
+    <button id="addBtn">Add</button><br>
+    <button id="cancel">Cancel</button>
+  </div>
+
+  <div class="container">
+    <button id="add">ADD STUDENTS</button>
+</div>
+  <script type="module" src="./config.js"></script>
+  <script type="module" src="./class.js"></script>
+</body>
+
+</html>

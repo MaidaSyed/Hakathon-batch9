@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style the container */
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style the input fields */
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button,a {
+            width: 100%;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        select {
+            padding: 8px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Class Schedule Form</h1><br>
+        <select id="class-timings" name="class-timings">
+            <option value="">Class timings</option>
+            <option value="8:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+            <option value="10:30 AM - 12:30 PM">10:30 AM - 12:30 PM</option>
+            <option value="2:00 PM - 4:00 PM">2:00 PM - 4:00 PM</option>
+        </select> <br><br>
+        <select id="schedule-of-classes" name="schedule-of-classes">
+            <option value="">Schedule of class</option>
+            <option value="Monday, Wednesday, Friday">Monday, Wednesday, Friday</option>
+            <option value="Tuesday, Thursday">Tuesday, Thursday</option>
+            <option value="Monday to Friday">Monday to Friday</option>
+        </select><br><br>
+        <input type="text" id="teachers-name" placeholder="TEACHER NAME"><br>
+        <select id="section-name" name="section-name">
+            <option value="">Section</option>
+            <option value="Section A">Section A</option>
+            <option value="Section B">Section B</option>
+            <option value="Section C">Section C</option>
+        </select><br><br>
+        <select id="course-name" name="course-name">
+            <option value="">Select Course</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Business Administration">Business Administration</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+        </select><br><br>
+        <select id="batch-num" name="batch-num">
+            <option value="">Select Batch</option>
+            <option value="Batch 7">Batch 7</option>
+            <option value="Batch 8">Batch 8</option>
+            <option value="Batch 9">Batch 9</option>
+        </select><br><br>
+        <button id="addDetails">ADD DETAILS</button>
+        <a href="./class.html">See Classes</a>
+    </div>
+
+    <script type="module" src="./admin.js"></script>
+    <script type="module" src="./config.js"></script>
+</body>
+
+</html>

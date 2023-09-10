@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the container vertically and horizontally */
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for the title */
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style for the card */
+.card {
+    border: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 300px;
+}
+
+/* Style for the image */
+.img {
+width: 120px;
+height: 120px;
+font-size: 80px;
+color: white;
+background-color: #0056b3;
+margin: auto;
+text-transform: uppercase;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* Style for the input fields */
+input[type="text"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f8f8f8;
+}
+
+/* Style for the MARK button */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#class {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+/* Style for individual class-details divs (cards) */
+.class-details {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    width: 90%; /* 3 columns with margins */
+    text-align: left;
+    color: #333;
+}
+
+/* Style for the teacher's name */
+.teacher {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Add spacing for class-details on smaller screens */
+@media (max-width: 768px) {
+    .class-details {
+        max-width: calc(50% - 20px); /* 2 columns with margins on smaller screens */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>ID CARD</h1>
+            <div class="img">
+            </div><br>
+            <input id="name" type="text" readonly> <br><br>
+            <input id="rollNo" type="text" readonly><br><br>
+        </div>
+
+        <h1>MARK YOUR ATTENDANCE</h1>
+        <button id="mark">MARK</button>
+        <p id="p"></p>
+    </div>
+
+    <h1 style="text-align: center;">CLASSES SCHEDULE</h1>
+    <div id="class"></div>
+
+    <script type="module" src="./config.js"></script>
+    <script type="module" src="./att.js"></script>
+</body>
+
+</html>
